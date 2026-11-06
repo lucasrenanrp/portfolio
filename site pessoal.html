@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas Renan | Portfólio</title>
+
+    <!-- Fontes do Google: Space Grotesk (títulos) e Inter (textos) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Ícones do Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Folha de estilos -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Cabeçalho fixo com navegação -->
+    <header class="cabecalho">
+        <nav class="navegacao container">
+            <a href="#" class="logo-link">Lucas Renan</a>
+
+            <div class="menu-navegacao">
+                <ul class="lista-links">
+                    <li><a href="#sobre-mim" class="item-link">Sobre mim</a></li>
+                    <li><a href="#habilidades" class="item-link">Habilidades</a></li>
+                    <li><a href="#projetos" class="item-link">Projetos</a></li>
+                    <li><a href="#contatos" class="item-link">Contatos</a></li>
+                </ul>
+
+                <!-- Botão de alternar tema claro e escuro -->
+                <button id="botao-tema" class="botao-tema" aria-label="Alternar tema">
+                    <i class="fa-solid fa-moon icone-tema"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Conteúdo principal da página -->
+    <main class="conteudo-principal">
+        <!-- Seção Sobre mim (com a frase principal no topo) -->
+        <section id="sobre-mim" class="secao container">
+            <div class="apresentacao">
+                <div class="apresentacao-texto">
+                    <span class="etiqueta-area">Estudante de ADS</span>
+                    <h1 class="titulo-principal">Meu nome é Lucas Renan, tenho 17 anos e estudo Análise e
+                        Desenvolvimento de Sistemas</h1>
+                    <p class="apresentacao-descricao">Sou apaixonado por tecnologia e desenvolvimento de software,
+                        adoro aprender novas linguagens e frameworks, e busco constantemente aprimorar minhas
+                        habilidades para criar soluções inovadoras e eficientes.</p>
+
+                    <div class="grupo-botoes">
+                        <a href="#projetos" class="botao botao-primario">Ver Projetos</a>
+                        <a href="#contatos" class="botao botao-secundario">Entrar em Contato</a>
+                    </div>
+                </div>
+
+                <div class="apresentacao-visual">
+                    <div class="moldura-foto">
+                        <div class="foto-placeholder">
+                            <i class="fa-solid fa-user icone-avatar"></i>
+                            <img class="foto" src="img/eu.jpg" alt="Foto Lucas" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Habilidades -->
+        <section id="habilidades" class="secao container">
+            <div class="cabecalho-secao">
+                <h2 class="titulo-secao">habilidades de desenvolvimento</h2>
+                <p class="subtitulo-secao">linguagens e tecnologias que domino</p>
+            </div>
+
+            <div class="grade-habilidades">
+                <article class="cartao-habilidade">
+                    <i class="fa-solid fa-code icone-habilidade"></i>
+                    <h3 class="titulo-habilidade">back end</h3>
+                    <p class="descricao-habilidade">trabalho com desenvolvimento de sites e aplicações web</p>
+                </article>
+
+                <article class="cartao-habilidade">
+                    <i class="fa-solid fa-laptop-code icone-habilidade"></i>
+                    <h3 class="titulo-habilidade">front end</h3>
+                    <p class="descricao-habilidade">interface do site</p>
+                </article>
+
+                <article class="cartao-habilidade">
+                    <i class="fa-solid fa-layer-group icone-habilidade"></i>
+                    <h3 class="titulo-habilidade">banco de dados</h3>
+                    <p class="descricao-habilidade">criação de bancos de dados e gerenciamento de informações</p>
+                </article>
+
+                <article class="cartao-habilidade">
+                    <i class="fa-solid fa-terminal icone-habilidade"></i>
+                    <h3 class="titulo-habilidade">GIT</h3>
+                    <p class="descricao-habilidade">controle de versão</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Seção Projetos -->
+        <section id="projetos" class="secao container">
+            <div class="cabecalho-secao">
+                <h2 class="titulo-secao">título a definir</h2>
+                <p class="subtitulo-secao">descrição da seção a definir</p>
+            </div>
+
+            <div class="grade-projetos">
+                <!-- Projeto 1 -->
+                <article class="cartao-projeto">
+                    <div class="previa-projeto">
+                        <i class="fa-solid fa-laptop-code icone-previa"></i>
+                        <span>[imagem do projeto 1]</span>
+                    </div>
+                    <div class="conteudo-projeto">
+                        <h3 class="titulo-projeto">pokedex</h3>
+                        <p class="descricao-projeto">pokedex interativa, e ordenada</p>
+                        <div class="lista-tecnologias">
+                            <span class="tag-tecnologia">HTML</span>
+                            <span class="tag-tecnologia">CSS</span>
+                            <span class="tag-tecnologia">JAVASCRIPT</span>
+                        </div>
+                        <div class="acoes-projeto">
+                            <a href="#" class="botao botao-primario" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-solid fa-arrow-up-right-from-square icone-botao"></i>
+                                Ver Projeto
+                            </a>
+                            <a href="#" class="botao botao-secundario" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-github icone-botao"></i>
+                                Código
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Projeto 2 -->
+                <article class="cartao-projeto">
+                    <div class="previa-projeto">
+                        <i class="fa-solid fa-laptop-code icone-previa"></i>
+                        <span>[imagem do projeto 2]</span>
+                    </div>
+                    <div class="conteudo-projeto">
+                        <h3 class="titulo-projeto">player de música</h3>
+                        <p class="descricao-projeto">player de música com html, css e javascript</p>
+                        <div class="lista-tecnologias">
+                            <span class="tag-tecnologia">HTML</span>
+                            <span class="tag-tecnologia">CSS</span>
+                            <span class="tag-tecnologia">JAVASCRIPT</span>
+                        </div>
+                        <div class="acoes-projeto">
+                            <a href="#" class="botao botao-primario" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-solid fa-arrow-up-right-from-square icone-botao"></i>
+                                Ver Projeto
+                            </a>
+                            <a href="#" class="botao botao-secundario" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-github icone-botao"></i>
+                                Código
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Projeto 3 -->
+                <article class="cartao-projeto">
+                    <div class="previa-projeto">
+                        <i class="fa-solid fa-laptop-code icone-previa"></i>
+                        <span>[imagem do projeto 3]</span>
+                    </div>
+                    <div class="conteudo-projeto">
+                        <h3 class="titulo-projeto">[sistema de gestão de bibliotecas]</h3>
+                        <p class="descricao-projeto">[sistema para controle de livros e empréstimos]
+                        </p>
+                        <div class="lista-tecnologias">
+                            <span class="tag-tecnologia">HTML</span>
+                            <span class="tag-tecnologia">CSS</span>
+                            <span class="tag-tecnologia">JAVASCRIPT</span>
+                            <span class="tag-tecnologia">PYTHON</span>
+                            <span class="tag-tecnologia">API</span>
+                        </div>
+                        <div class="acoes-projeto">
+                            <a href="#" class="botao botao-primario" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-solid fa-arrow-up-right-from-square icone-botao"></i>
+                                Ver Projeto
+                            </a>
+                            <a href="#" class="botao botao-secundario" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-github icone-botao"></i>
+                                Código
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Seção Contatos -->
+        <section id="contatos" class="secao container">
+            <div class="cabecalho-secao">
+                <h2 class="titulo-secao">CONTATOS</h2>
+                <p class="subtitulo-secao">descrição da seção a definir</p>
+            </div>
+
+            <div class="grade-contatos">
+                <!-- E-mail -->
+                <a href="mailto:[e-mail para contato]" class="cartao-contato">
+                    <div class="icone-contato">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div class="info-contato">
+                        <h3 class="titulo-contato">E-mail</h3>
+                        <p class="texto-contato">e-mail para contato</p>
+                    </div>
+                    <i class="fa-solid fa-arrow-right seta-contato"></i>
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="[link do LinkedIn]" target="_blank" rel="noopener noreferrer" class="cartao-contato">
+                    <div class="icone-contato">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </div>
+                    <div class="info-contato">
+                        <h3 class="titulo-contato">LinkedIn</h3>
+                        <p class="texto-contato">link do LinkedIn</p>
+                    </div>
+                    <i class="fa-solid fa-arrow-right seta-contato"></i>
+                </a>
+
+                <!-- GitHub -->
+                <a href="[link do GitHub]" target="_blank" rel="noopener noreferrer" class="cartao-contato">
+                    <div class="icone-contato">
+                        <i class="fa-brands fa-github"></i>
+                    </div>
+                    <div class="info-contato">
+                        <h3 class="titulo-contato">GitHub</h3>
+                        <p class="texto-contato">link do GitHub</p>
+                    </div>
+                    <i class="fa-solid fa-arrow-right seta-contato"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="rodape">
+        <div class="container rodape-conteudo">
+            <p class="rodape-texto">&copy; Lucas Renan - Todos os direitos reservados.</p>
+            <div class="rodape-links">
+                <span class="rodape-texto">link de contato</span>
+                <a href="#sobre-mim" class="link-topo" aria-label="Voltar ao início">
+                    <i class="fa-solid fa-arrow-up"></i>
+                    <span>Voltar ao topo</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Arquivo de script -->
+    <script src="script.js"></script>
+</body>
+
+</html>

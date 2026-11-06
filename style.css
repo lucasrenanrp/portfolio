@@ -1,118 +1,812 @@
+/* ==========================================================================
+   1. VARIÁVEIS E TEMAS (DESIGN SYSTEM)
+   ========================================================================== */
+
 :root {
-    --fundo: #f5f3ff;
-    --superficie: #ffff;
-    --texto: #1e1b4b;
-    --texto-suave: #55527a;
-    --primaria: #6d28d9;
-    --primaria-escura: #5b21b6;
-    --destaque: #fb923c;
-    --raio: 16px;
-    --sombra: 0 8px 24px rgba(109, 40, 217, 0.12);
+    /* Cores no modo escuro (padrão) - Base: Azul-marinho, Roxo e Branco */
+    --cor-fundo: #0a0e1a;
+    --cor-fundo-cartao: #121829;
+    --cor-borda: #1e293b;
+    --cor-primaria: #8b5cf6;
+    --cor-secundaria: #38bdf8;
+    --cor-texto-principal: #ffffff;
+    --cor-texto-secundario: #94a3b8;
+
+    /* Fontes do Google Fonts */
+    --fonte-titulos: 'Space Grotesk', sans-serif;
+    --fonte-textos: 'Inter', sans-serif;
+
+    /* Largura do container principal */
+    --largura-container: 1100px;
 }
+
+/* Cores no modo claro (ativado via classe no body) */
+body.modo-claro {
+    --cor-fundo: #f0f4f9;
+    --cor-fundo-cartao: #ffffff;
+    --cor-borda: #cbd5e1;
+    --cor-primaria: #6d28d9;
+    --cor-secundaria: #1e40af;
+    --cor-texto-principal: #0f172a;
+    --cor-texto-secundario: #475569;
+}
+
+/* ==========================================================================
+   2. RESET E ESTILOS GLOBAIS
+   ========================================================================== */
 
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
-
-html {
-    scroll-behavior: smooth;
+    box-sizing: border-box;
 }
 
 body {
-    background-color: var(--fundo);
-    font-family: "Segoe UI", sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-principal);
+    font-family: var(--fonte-textos);
+    font-size: 16px;
     line-height: 1.6;
-    color: var(--texto);
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
+    color: var(--cor-texto-principal);
+    font-family: var(--fonte-titulos);
     line-height: 1.2;
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
 }
 
 h2 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     margin-bottom: 1rem;
 }
 
-h3 {
+p {
+    color: var(--cor-texto-secundario);
+    font-size: 1rem;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* ==========================================================================
+   3. ESTRUTURA E CONTAINER
+   ========================================================================== */
+
+/* Container para limitar a largura e centralizar o conteúdo */
+.container {
+    margin: 0 auto;
+    max-width: var(--largura-container);
+    padding: 0 1.5rem;
+    width: 100%;
+}
+
+/* Espaçamento vertical padrão para as seções */
+.secao {
+    padding: 5rem 0;
+}
+
+.bloco-conteudo {
+    margin-top: 1.5rem;
+}
+
+/* ==========================================================================
+   4. CABEÇALHO E NAVEGAÇÃO
+   ========================================================================== */
+
+.cabecalho {
+    background-color: var(--cor-fundo);
+    border-bottom: 1px solid var(--cor-borda);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.navegacao {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.logo-link {
+    color: var(--cor-texto-principal);
+    font-family: var(--fonte-titulos);
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.menu-navegacao {
+    align-items: center;
+    display: flex;
+}
+
+.lista-links {
+    align-items: center;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.item-link {
+    color: var(--cor-texto-secundario);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.controles-cabecalho {
+    align-items: center;
+    display: flex;
+    gap: 0.75rem;
+}
+
+.botao-tema,
+.botao-menu {
+    align-items: center;
+    background-color: var(--cor-fundo-cartao);
+    border: 1px solid var(--cor-borda);
+    border-radius: 50%;
+    color: var(--cor-texto-principal);
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    width: 40px;
+}
+
+.botao-menu {
+    display: none;
+}
+
+.icone-tema,
+.icone-menu {
+    font-size: 1rem;
+}
+
+/* Responsividade do cabeçalho para telas menores */
+@media (max-width: 768px) {
+    .botao-menu {
+        display: flex;
+    }
+
+    .menu-navegacao {
+        background-color: var(--cor-fundo);
+        border-bottom: 1px solid var(--cor-borda);
+        display: none;
+        left: 0;
+        padding: 1.5rem 0;
+        position: absolute;
+        top: 100%;
+        width: 100%;
+    }
+
+    .menu-navegacao.menu-aberto {
+        display: block;
+    }
+
+    .lista-links {
+        flex-direction: column;
+        gap: 1.25rem;
+        text-align: center;
+    }
+
+    .item-link {
+        font-size: 1rem;
+    }
+}
+
+/* ==========================================================================
+   5. SEÇÃO SOBRE MIM
+   ========================================================================== */
+
+.apresentacao {
+    align-items: center;
+    display: flex;
+    gap: 4rem;
+    justify-content: space-between;
+}
+
+.apresentacao-texto {
+    flex: 1;
+}
+
+.etiqueta-area {
+    background-color: var(--cor-fundo-cartao);
+    border: 1px solid var(--cor-borda);
+    border-radius: 20px;
+    color: var(--cor-secundaria);
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    padding: 0.5rem 1rem;
+}
+
+.apresentacao-descricao {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.grupo-botoes {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.botao {
+    align-items: center;
+    border-radius: 8px;
+    display: inline-flex;
+    font-size: 0.95rem;
+    font-weight: 600;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    text-align: center;
+}
+
+.botao-primario {
+    background-color: var(--cor-primaria);
+    color: #ffffff;
+}
+
+.botao-secundario {
+    background-color: var(--cor-fundo-cartao);
+    border: 1px solid var(--cor-borda);
+    color: var(--cor-texto-principal);
+}
+
+.apresentacao-visual {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.moldura-foto {
+    background-color: var(--cor-fundo-cartao);
+    border: 2px solid var(--cor-borda);
+    border-radius: 16px;
+    height: 320px;
+    padding: 1rem;
+    width: 280px;
+}
+
+.foto-placeholder {
+    align-items: center;
+    border: 2px dashed var(--cor-borda);
+    border-radius: 12px;
+    color: var(--cor-texto-secundario);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%;
+    justify-content: center;
+    width: 100%;
+}
+
+.icone-avatar {
+    color: var(--cor-primaria);
+    font-size: 3rem;
+}
+
+/* Responsividade da seção Sobre mim para telas menores */
+@media (max-width: 768px) {
+    .apresentacao {
+        flex-direction: column-reverse;
+        gap: 2.5rem;
+        text-align: center;
+    }
+
+    .etiqueta-area {
+        margin: 0 auto 1.5rem auto;
+    }
+
+    .grupo-botoes {
+        justify-content: center;
+    }
+
+    .moldura-foto {
+        height: 240px;
+        width: 220px;
+    }
+}
+
+/* ==========================================================================
+   6. SEÇÃO HABILIDADES
+   ========================================================================== */
+
+.cabecalho-secao {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.subtitulo-secao {
+    color: var(--cor-texto-secundario);
+    font-size: 1.125rem;
+}
+
+.grade-habilidades {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.cartao-habilidade {
+    background-color: var(--cor-fundo-cartao);
+    border: 1px solid var(--cor-borda);
+    border-radius: 12px;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+}
+
+.icone-habilidade {
+    color: var(--cor-secundaria);
+    font-size: 2.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.titulo-habilidade {
+    color: var(--cor-texto-principal);
     font-size: 1.25rem;
     margin-bottom: 0.5rem;
 }
 
-h4 {
+.descricao-habilidade {
+    color: var(--cor-texto-secundario);
     font-size: 0.95rem;
-    margin-top: 0.75rem;
+    line-height: 1.5;
 }
 
-p {
-    color: var(--texto-suave);
-    margin-bottom: 1rem;
+/* Responsividade da seção Habilidades para telas menores */
+@media (max-width: 768px) {
+    .cabecalho-secao {
+        margin-bottom: 2rem;
+    }
+
+    .grade-habilidades {
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    }
 }
 
-a {
-    color: var(--primaria);
+/* ==========================================================================
+   7. SEÇÃO PROJETOS
+   ========================================================================== */
+
+.grade-projetos {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.cartao-projeto {
+    background-color: var(--cor-fundo-cartao);
+    border: 1px solid var(--cor-borda);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.previa-projeto {
+    align-items: center;
+    background-color: var(--cor-fundo);
+    border-bottom: 1px solid var(--cor-borda);
+    color: var(--cor-texto-secundario);
+    display: flex;
+    flex-direction: column;
+    font-size: 0.875rem;
+    gap: 0.5rem;
+    height: 180px;
+    justify-content: center;
+}
+
+.imagem-projeto {
+    border-bottom: 1px solid var(--cor-borda);
+    display: block;
+    height: 180px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.icone-previa {
+    color: var(--cor-primaria);
+    font-size: 2.25rem;
+}
+
+.conteudo-projeto {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 1.5rem;
+}
+
+.titulo-projeto {
+    color: var(--cor-texto-principal);
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.descricao-projeto {
+    color: var(--cor-texto-secundario);
+    flex: 1;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+}
+
+.lista-tecnologias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.tag-tecnologia {
+    background-color: var(--cor-fundo);
+    border: 1px solid var(--cor-borda);
+    border-radius: 20px;
+    color: var(--cor-secundaria);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+}
+
+.acoes-projeto {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.icone-botao {
+    font-size: 0.875rem;
+    margin-right: 0.5rem;
+}
+
+/* Responsividade da seção Projetos para telas menores */
+@media (max-width: 768px) {
+    .grade-projetos {
+        gap: 1.5rem;
+        grid-template-columns: 1fr;
+    }
+
+    .acoes-projeto {
+        flex-direction: column;
+    }
+}
+
+/* ==========================================================================
+   8. SEÇÃO CONTATOS
+   ========================================================================== */
+
+.grade-contatos {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+.cartao-contato {
+    align-items: center;
+    background-color: var(--cor-fundo-cartao);
+    border: 1px solid var(--cor-borda);
+    border-radius: 12px;
+    display: flex;
+    gap: 1.25rem;
+    padding: 1.5rem;
+}
+
+.icone-contato {
+    align-items: center;
+    background-color: var(--cor-fundo);
+    border: 1px solid var(--cor-borda);
+    border-radius: 10px;
+    color: var(--cor-primaria);
+    display: flex;
+    font-size: 1.5rem;
+    height: 50px;
+    justify-content: center;
+    width: 50px;
+}
+
+.info-contato {
+    flex: 1;
+}
+
+.titulo-contato {
+    color: var(--cor-texto-principal);
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.texto-contato {
+    color: var(--cor-texto-secundario);
+    font-size: 0.875rem;
+    word-break: break-all;
+}
+
+.seta-contato {
+    color: var(--cor-texto-secundario);
+    font-size: 0.875rem;
+}
+
+.formulario-contato {
+    background-color: var(--cor-fundo-cartao);
+    border: 1px solid var(--cor-borda);
+    border-radius: 12px;
+    margin: 2.5rem auto 0 auto;
+    max-width: 600px;
+    padding: 2rem;
+}
+
+.titulo-formulario {
+    color: var(--cor-texto-principal);
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.campo-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.rotulo-campo {
+    color: var(--cor-texto-principal);
+    font-size: 0.875rem;
     font-weight: 600;
 }
 
-img {
-    max-width: 100%;
+.campo-texto {
+    background-color: var(--cor-fundo);
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    color: var(--cor-texto-principal);
+    font-family: inherit;
+    font-size: 0.95rem;
+    padding: 0.75rem 1rem;
+    width: 100%;
+}
+
+.campo-textarea {
+    resize: vertical;
+}
+
+.campo-texto:focus {
+    border-color: var(--cor-primaria);
+    outline: none;
+}
+
+.campo-texto.campo-invalido {
+    border-color: #ef4444;
+}
+
+.texto-erro {
+    color: #ef4444;
     display: block;
+    font-size: 0.8125rem;
+    min-height: 1.1rem;
+    text-align: left;
 }
 
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 4rem 1.5rem;
+.mensagem-status {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    min-height: 1.25rem;
+    text-align: center;
 }
 
-.topo {
+.status-erro {
+    color: #ef4444;
+}
+
+.status-sucesso {
+    color: #10b981;
+}
+
+.botao-enviar {
+    width: 100%;
+}
+
+/* Responsividade da seção Contatos para telas menores */
+@media (max-width: 768px) {
+    .grade-contatos {
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    }
+
+    .formulario-contato {
+        padding: 1.5rem 1rem;
+    }
+}
+
+/* ==========================================================================
+   9. RODAPÉ
+   ========================================================================== */
+
+.rodape {
+    background-color: var(--cor-fundo);
+    border-top: 1px solid var(--cor-borda);
+    padding: 2.5rem 0;
+}
+
+.rodape-conteudo {
+    align-items: center;
     display: flex;
     justify-content: space-between;
+}
+
+.rodape-texto {
+    color: var(--cor-texto-secundario);
+    font-size: 0.875rem;
+}
+
+.rodape-links {
     align-items: center;
-    padding: 1rem 1.5rem;
-    background-color: var(--superficie);
-    position: sticky;
-    top: 0;
-}
-
-.logo {
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: 700;
-}
-
-.topo nav a {
-    text-decoration: none;
-    margin-left: 1.25rem;
-    color: var(--texto);
-    font-weight: 500;
-}
-
-.topo nav a:hover {
-    color: var(--primaria);
-}
-
-.hero {
     display: flex;
+    gap: 1.5rem;
+}
+
+.link-topo {
     align-items: center;
-    gap: 3rem;
+    color: var(--cor-texto-secundario);
+    display: flex;
+    font-size: 0.875rem;
+    gap: 0.5rem;
 }
 
-.hero h2 {
-    color: var(--primaria);
-    font-size: 1.4rem;
+/* Responsividade do rodapé para telas menores */
+@media (max-width: 768px) {
+    .rodape-conteudo {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
 }
 
-.foto {
-    width: 260px;
-    height: 260px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 6px solid var(--destaque);
+/* ==========================================================================
+   10. TRANSIÇÕES E EFEITOS DE HOVER
+   (Todos os efeitos de transição e hover agrupados aqui)
+   ========================================================================== */
+
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+    transition: color 0.2s ease;
+}
+
+button {
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+a:hover {
+    color: var(--cor-primaria);
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.logo-link {
+    transition: color 0.2s ease;
+}
+
+.logo-link:hover {
+    color: var(--cor-primaria);
+}
+
+.item-link {
+    transition: color 0.2s ease;
+}
+
+.item-link:hover {
+    color: var(--cor-primaria);
+}
+
+.botao-tema,
+.botao-menu {
+    transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.botao-tema:hover,
+.botao-menu:hover {
+    border-color: var(--cor-primaria);
+    color: var(--cor-primaria);
+    transform: scale(1.05);
+}
+
+.botao {
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
+}
+
+.botao-primario:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+.botao-secundario:hover {
+    border-color: var(--cor-primaria);
+    color: var(--cor-primaria);
+    transform: translateY(-2px);
+}
+
+.moldura-foto {
+    transition: border-color 0.3s ease;
+}
+
+.moldura-foto:hover {
+    border-color: var(--cor-primaria);
+}
+
+.cartao-habilidade {
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.cartao-habilidade:hover {
+    border-color: var(--cor-primaria);
+    transform: translateY(-4px);
+}
+
+.cartao-projeto {
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.cartao-projeto:hover {
+    border-color: var(--cor-primaria);
+    transform: translateY(-4px);
+}
+
+.cartao-contato {
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.cartao-contato:hover {
+    border-color: var(--cor-primaria);
+    transform: translateY(-3px);
+}
+
+.seta-contato {
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.cartao-contato:hover .seta-contato {
+    color: var(--cor-primaria);
+    transform: translateX(4px);
+}
+
+.link-topo {
+    transition: color 0.2s ease;
+}
+
+.link-topo:hover {
+    color: var(--cor-primaria);
+}
+
+.campo-texto {
+    transition: border-color 0.2s ease;
 }
