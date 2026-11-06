@@ -292,6 +292,15 @@ button {
     width: 280px;
 }
 
+.foto-perfil,
+.foto {
+    border-radius: 12px;
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
 .foto-placeholder {
     align-items: center;
     border: 2px dashed var(--cor-borda);

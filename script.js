@@ -338,4 +338,4 @@ if (campoMensagem) {
 }
 
 // Mensagem no console indicando que os scripts foram carregados com sucesso
-console.log("Portfólio de Maria: scripts carregados e prontos para uso.");
+console.log("Portfólio de Lucas: scripts carregados e prontos para uso.");
