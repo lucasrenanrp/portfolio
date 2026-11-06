@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas Renan | Portfólio</title>
+
+    <!-- Fontes do Google: Space Grotesk (títulos) e Inter (textos) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Ícones do Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Folha de estilos -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Cabeçalho fixo com navegação -->
+    <header class="cabecalho">
+        <nav class="navegacao container">
+            <a href="#" class="logo-link">Lucas Renan</a>
+
+            <div class="menu-navegacao" id="menu-navegacao">
+                <ul class="lista-links">
+                    <li><a href="#sobre-mim" class="item-link">Sobre mim</a></li>
+                    <li><a href="#habilidades" class="item-link">Habilidades</a></li>
+                    <li><a href="#projetos" class="item-link">Projetos</a></li>
+                    <li><a href="#contatos" class="item-link">Contatos</a></li>
+                </ul>
+            </div>
+
+            <div class="controles-cabecalho">
+                <!-- Botão de alternar tema claro e escuro -->
+                <button id="botao-tema" class="botao-tema" aria-label="Alternar tema">
+                    <i class="fa-solid fa-moon icone-tema"></i>
+                </button>
+
+                <!-- Botão de menu para celular -->
+                <button id="botao-menu" class="botao-menu" aria-label="Abrir menu de navegação">
+                    <i class="fa-solid fa-bars icone-menu"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Conteúdo principal da página -->
+    <main class="conteudo-principal">
+        <!-- Seção Sobre mim (com a frase principal no topo) -->
+        <section id="sobre-mim" class="secao container">
+            <div class="apresentacao">
+                <div class="apresentacao-texto">
+                    <span class="etiqueta-area">Lucas Renan &bull; Desenvolvedor Full Stack</span>
+                    <h1 class="titulo-principal">Transformo ideias em experiências digitais funcionais, bonitas e
+                        escaláveis.</h1>
+                    <p class="apresentacao-descricao">Movido pela curiosidade e pela constante evolução, uso a
+                        tecnologia e o design para criar experiências autênticas que conectam pessoas e simplificam
+                        processos</p>
+
+                    <div class="grupo-botoes">
+                        <a href="#projetos" class="botao botao-primario">
+                            <i class="fa-solid fa-laptop-code icone-botao"></i>
+                            Ver projetos
+                        </a>
+                        <a href="#contatos" class="botao botao-secundario">
+                            <i class="fa-solid fa-envelope icone-botao"></i>
+                            Entrar em contato
+                        </a>
+                    </div>
+                </div>
+
+                <div class="apresentacao-visual">
+                    <div class="moldura-foto">
+                        <div class="foto-placeholder">
+                            <i class="fa-solid fa-user icone-avatar"></i>
+                            <span>[foto na pasta img/]</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Habilidades -->
+        <section id="habilidades" class="secao container">
+            <div class="cabecalho-secao">
+                <h2 class="titulo-secao">Habilidades</h2>
+                <p class="subtitulo-secao">Conhecimentos e tecnologias que utilizo no desenvolvimento de soluções</p>
+            </div>
+
+            <div class="grade-habilidades">
+                <article class="cartao-habilidade">
+                    <i class="fa-solid fa-laptop-code icone-habilidade"></i>
+                    <h3 class="titulo-habilidade">Front-end</h3>
+                    <p class="descricao-habilidade">HTML, CSS, JavaScript</p>
+                </article>
+
+                <article class="cartao-habilidade">
+                    <i class="fa-solid fa-server icone-habilidade"></i>
+                    <h3 class="titulo-habilidade">Back-end</h3>
+                    <p class="descricao-habilidade">Python, Node.js</p>
+                </article>
+
+                <article class="cartao-habilidade">
+                    <i class="fa-solid fa-database icone-habilidade"></i>
+                    <h3 class="titulo-habilidade">Banco de dados</h3>
+                    <p class="descricao-habilidade">SQL</p>
+                </article>
+
+                <article class="cartao-habilidade">
+                    <i class="fa-solid fa-code-branch icone-habilidade"></i>
+                    <h3 class="titulo-habilidade">Ferramentas e controle de versão</h3>
+                    <p class="descricao-habilidade">GitHub</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Seção Projetos -->
+        <section id="projetos" class="secao container">
+            <div class="cabecalho-secao">
+                <h2 class="titulo-secao">Projetos</h2>
+                <p class="subtitulo-secao">Aplicações e soluções desenvolvidas recentemente</p>
+            </div>
+
+            <!-- Grade de projetos preenchida dinamicamente pelo JavaScript -->
+            <div class="grade-projetos" id="grade-projetos"></div>
+        </section>
+
+        <!-- Seção Contatos -->
+        <section id="contatos" class="secao container">
+            <div class="cabecalho-secao">
+                <h2 class="titulo-secao">Contatos</h2>
+                <p class="subtitulo-secao">Vamos conversar? Acesse minhas redes ou envie uma mensagem direta</p>
+            </div>
+
+            <!-- Cartões com links de contato -->
+            <div class="grade-contatos">
+                <!-- E-mail -->
+                <a href="lucasrenanrp@gmail.com" class="cartao-contato">
+                    <div class="icone-contato">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div class="info-contato">
+                        <h3 class="titulo-contato">E-mail</h3>
+                        <p class="texto-contato">Lucas Renan - E-mail</p>
+                    </div>
+                    <i class="fa-solid fa-arrow-right seta-contato"></i>
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/lucas-renan-801167367/" target="_blank" rel="noopener noreferrer"
+                    class="cartao-contato">
+                    <div class="icone-contato">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </div>
+                    <div class="info-contato">
+                        <h3 class="titulo-contato">LinkedIn</h3>
+                        <p class="texto-contato">Lucas Renan - Linkedin</p>
+                    </div>
+                    <i class="fa-solid fa-arrow-right seta-contato"></i>
+                </a>
+
+                <!-- GitHub -->
+                <a href="https://github.com/lucasrenanrp" target="_blank" rel="noopener noreferrer"
+                    class="cartao-contato">
+                    <div class="icone-contato">
+                        <i class="fa-brands fa-github"></i>
+                    </div>
+                    <div class="info-contato">
+                        <h3 class="titulo-contato">GitHub</h3>
+                        <p class="texto-contato">Lucas Renan - GitHub</p>
+                    </div>
+                    <i class="fa-solid fa-arrow-right seta-contato"></i>
+                </a>
+            </div>
+
+            <!-- Formulário de contato com validação no JavaScript -->
+            <form id="formulario-contato" class="formulario-contato" novalidate>
+                <h3 class="titulo-formulario">Envie uma mensagem</h3>
+
+                <div class="campo-grupo">
+                    <label for="campo-nome" class="rotulo-campo">Nome</label>
+                    <input type="text" id="campo-nome" class="campo-texto" placeholder="Seu nome" required>
+                    <span id="erro-nome" class="texto-erro"></span>
+                </div>
+
+                <div class="campo-grupo">
+                    <label for="campo-email" class="rotulo-campo">E-mail</label>
+                    <input type="email" id="campo-email" class="campo-texto" placeholder="seu.email@exemplo.com"
+                        required>
+                    <span id="erro-email" class="texto-erro"></span>
+                </div>
+
+                <div class="campo-grupo">
+                    <label for="campo-mensagem" class="rotulo-campo">Mensagem</label>
+                    <textarea id="campo-mensagem" class="campo-texto campo-textarea" rows="4"
+                        placeholder="Escreva sua mensagem aqui..." required></textarea>
+                    <span id="erro-mensagem" class="texto-erro"></span>
+                </div>
+
+                <!-- Mensagem de status geral da validação -->
+                <p id="mensagem-status" class="mensagem-status" aria-live="polite"></p>
+
+                <button type="submit" class="botao botao-primario botao-enviar">
+                    <i class="fa-solid fa-paper-plane icone-botao"></i>
+                    Enviar mensagem
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="rodape">
+        <div class="container rodape-conteudo">
+            <p class="rodape-texto">&copy; Lucas Renan &bull; Todos os direitos reservados.</p>
+            <div class="rodape-links">
+                <a href="#contatos" class="rodape-link">Contato</a>
+                <a href="#sobre-mim" class="link-topo" aria-label="Voltar ao início">
+                    <i class="fa-solid fa-arrow-up"></i>
+                    <span>Voltar ao topo</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Arquivo de script -->
+    <script src="script.js"></script>
+</body>
+
+</html>
